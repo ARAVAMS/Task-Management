@@ -1,0 +1,184 @@
+#container{
+    height:100px;
+}
+#clock{
+    width: 300px;
+    height: 100px;
+    border: 1px solid #DDD;
+    clear:none;
+    float:left;
+    font-size: 60pt;
+    padding-left:20px;
+
+   
+}
+
+a{
+    display:inline-block;
+    padding:8px;
+    border-radius: 5px;
+    border:1px solid #DDD;
+    color:white;
+    background-color: #ff3300;
+}
+
+
+
+table, div {
+    clear:both;
+    margin-bottom: 20px;
+	
+}
+table {
+    width:410px;
+    border:1px solid #DDD;
+	
+}
+tr{
+    padding: 5px;
+	width:40px;
+    background-color: #EEE;
+}
+
+
+th {
+    padding: 5px;	
+   
+}
+
+td {
+    padding: 5px;
+    
+}
+
+.start{
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+ padding: 1px 7px; /*add some padding to the inside of the button*/
+background:#35b128; /*the colour of the button*/
+border:1px solid #33842a; /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+border-radius: 11px;
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:#f3f3f3;
+font-size: 12px;	
+}
+
+.stop{
+	
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+ padding: 1px 7px; /*add some padding to the inside of the button*/
+background:#ff0000; /*the colour of the button*/
+border:1px solid #33842a;  /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+border-radius: 11px;
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:#f3f3f3;
+font-size: 12px;		
+}
+
+
+.resume{
+	
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+ padding: 1px 7px; /*add some padding to the inside of the button*/
+background:#9C27B0; /*the colour of the button*/
+border:1px solid #33842a;  /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+border-radius: 11px;
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:#f3f3f3;
+font-size: 12px;		
+}
+
+.pause{
+	
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+ padding: 1px 7px; /*add some padding to the inside of the button*/
+background:#2700ff; /*the colour of the button*/
+border:1px solid #33842a;  /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+border-radius: 11px;
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:#f3f3f3;
+font-size: 12px;		
+}
+
+
+
+
+
+.add{
+	
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+ padding: 1px 7px; /*add some padding to the inside of the button*/
+background:yellow; /*the colour of the button*/
+border:1px solid #33842a;  /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+border-radius: 05px;
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:rgb(246, 106, 0);
+font-size: 16px;		
+}
+
+.remove{
+	
+cursor:pointer; /*forces the cursor to change to a hand when the button is hovered*/
+ padding: 1px 7px; /*add some padding to the inside of the button*/
+background:yellow; /*the colour of the button*/
+border:1px solid #33842a;  /*required or the default border for the browser will appear*/
+/*give the button curved corners, alter the size as required*/
+border-radius: 05px;
+box-shadow: 0 0 4px rgba(0,0,0, .75);
+/*style the text*/
+color:rgb(246, 106, 0);
+font-size: 17px;	
+}
+
+.login {
+  position: relative;
+  margin: 88px 146px;
+  padding: 22px 382px 86px 103px;
+  width: 460px;
+  background: #006699;
+  border-radius: 3px;
+  -webkit-box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 0 200px rgba(255, 255, 255, 0.5), 0 1px 2px rgba(0, 0, 0, 0.3);
+  	position:absolute;
+	/* for ie */
+	filter: progid:DXImageTransform.Microsoft.BasicImage(rotation=3);
+}
+.login:before {
+  content: '';
+  position: absolute;
+  top: -8px;
+  right: -8px;
+  bottom: -8px;
+  left: -8px;
+  z-index: -1;
+  background: rgba(0, 0, 0, 0.08);
+  border-radius: 4px;
+}
+.login h1 {
+  margin: -22px -103px 40px;
+  width: 945px;
+  line-height: 40px;
+  font-size: 15px;
+  font-weight: bold;
+  color: #555;
+  text-align: center;
+  text-shadow: 0 1px white;
+  background: #f3f3f3;
+  border-bottom: 1px solid #cfcfcf;
+  border-radius: 3px 3px 0 0;
+  background-image: -webkit-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -moz-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: -o-linear-gradient(top, whiteffd, #eef2f5);
+  background-image: linear-gradient(to bottom, whiteffd, #eef2f5);
+  -webkit-box-shadow: 0 1px whitesmoke;
+  box-shadow: 0 1px whitesmoke;
+}

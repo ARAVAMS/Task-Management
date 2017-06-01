@@ -1,0 +1,22 @@
+{
+  "name": "electron-demo",
+  "version": "1.0.0",
+  "description": "Electron demo app for a school presentation",
+  "main": "main.js",
+  "scripts": {
+    "build": "webpack --progress --profile --colors --display-error-details --display-cached",
+    "watch": "webpack --watch --progress --profile --colors --display-error-details --display-cached",
+    "start": "electron ."
+  },
+  "author": "Simon Schiller",
+  "license": "MIT",
+  "devDependencies": {
+    "electron": "^1.4.8",
+    "electron-packager": "^8.6.0"
+  },
+  "dependencies": {
+    "date-and-time": "^0.4.0",
+    "electron-window": "^1.6.4",
+    "nedb": "^1.8.0"
+  }
+}

@@ -1,0 +1,83 @@
+<!doctype html>
+<html lang="en">
+<head>
+
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.2.23/angular.min.js"></script>
+  <script src="app.js"></script>
+  
+   <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Detials </title>
+  <link rel="stylesheet" type="text/css" href="app.css" />
+<script type="text/javascript">
+    var remote = require('electron').remote;
+    document.addEventListener('keydown', function (e) {
+      if (e.which === 123) {
+        remote.getCurrentWindow().webContents.openDevTools();
+      } else if (e.which === 116) {
+        location.reload();
+      }
+    });
+</script>
+</head>
+<body ng-app="cbTimer">  
+ <section class="container">
+ <div id="container" ng-controller="cbTimerCtrl">
+ 
+ 
+ 
+ <div class="login">
+  <h1>Task Details</h1>
+ 
+     
+	
+	  <table class="container">
+	 <tr ng-repeat="name in data.names track by $index">
+	  
+	  <td> <input type="text" ng-model="data.names[$index].projectName" placeholder="Project Name"></td>
+       <td>
+		<input type="text" name="Task Name" id="taskName" ng-model="data.names[$index].taskName" value="" placeholder="Task Name">
+        </td>
+		<td><span ng-model="data.names[$index].timer" ng-init="data.names[$index].timer ='00:00:00'">{{data.names[$index].timer}}</span>
+		</td> 
+		     
+	  <td> <!--<input type="submit" ng-click="toggleTimer($index)" name="commit" ng-model="data.names[$index].mode" value="startTime">-->
+	  <button ng-click="toggleTimer($index)" class="start" ng-hide="data.names[$index].timerRunning" >Start</button>
+	  <button ng-click="pauseTimer($index)" class="pause" ng-model="data.names[$index].pauseRunning" ng-show="data.names[$index].pauseRunning">Pause</button>
+	  <button ng-click="resumeTimer($index)" class="resume" ng-model="data.names[$index].resumeRunning" ng-show="data.names[$index].resumeRunning">Resume</button>
+	  </td>
+	  <td> <button ng-click="stopTimer($index)" class="stop" ng-model="data.names[$index].timerRunning" ng-show="data.names[$index].timerRunning">Stop</button></td>
+	  	  <td> <input type="submit" class="add" ng-click="addRow($index)" value="+" ng-show="$first">
+		  <input type="submit" class="remove" ng-click="deleteRow($event,name)" value="-" ng-show="$index != 0">
+		  </td>
+			  </tr>
+     </table> 
+  
+   
+    <!--
+    <div>
+        <table>
+            <thead>
+                <tr><th>Project Name</th><th>Task Name</th><th>Start Time</th><th>End Time</th><th>Duration (secs)</th></tr>
+            </thead>
+            <tbody ng-repeat="item in timeSchedule.history">
+                <tr>
+				<td>{{item[0] }}</td>
+				<td>{{item[1] }}</td>
+                    <td>{{item[2] | date:'MM/dd/yy HH:mm:ss'}}</td>
+                    <td>{{item[3] | date:'MM/dd/yy HH:mm:ss'}}</td>
+                    <td>{{item[4] | number:1}}</td>
+                </tr>
+            </tbody>
+        </table>
+     </div>
+  </div> -->
+  
+
+  
+  
+  </div>
+</section>
+</body>
+</html>
+

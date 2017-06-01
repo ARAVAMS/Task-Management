@@ -1,0 +1,43 @@
+<!doctype html>
+<html lang="en">
+<head>
+   <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Task Details</title>
+<script src="https://ajax.googleapis.com/ajax/libs/angularjs/1.5.6/angular.min.js"></script>
+  <script src="./js/index.js"></script>
+  <script type="text/javascript">
+    var remote = require('electron').remote;
+    document.addEventListener('keydown', function (e) {
+      if (e.which === 123) {
+        remote.getCurrentWindow().webContents.openDevTools();
+      } else if (e.which === 116) {
+        location.reload();
+      }
+	 // alert("jsp"+current.projectName);
+    });
+</script>
+  <link rel="stylesheet" type="text/css" href="app.css" />
+</head>
+<body ng-app="task">  
+ 
+  <div id="container " ng-controller="taskdetailsctrl as userInfoCtrl" ng-init="userInfoCtrl.init()">
+    <h3>Your Task Details
+	
+	</h3>
+   <div>
+
+   
+        <table>
+            <thead>
+                <tr><th>Project Name</th><th>Task Name</th><th>Start Time</th><th>End Time</th></tr>
+            </thead>
+             <tbody id="tablebody">              
+            </tbody>
+        </table>
+		
+     </div>
+  </div>
+ 
+</body>
+</html>

@@ -31,13 +31,13 @@ var eatTimerCtrl= this;
     //$scope.data.names[index].timeEnd = 0;
     $scope.startMode="Start";
     $scope.timeSchedule = initService.timeSchedule;
-    
-    
+
+
 
     /**
      *  @func $scope.startTimer
      *  tr
-	 igger timer to start, 
+	 igger timer to start,
      *  recursive, call again when timer expires
      */
     $scope.startTimer = function (index) {
@@ -45,7 +45,7 @@ var eatTimerCtrl= this;
     //alert($scope.data.names[index].pauseRunning)
         //$scope.data.names[index].mode = "Stop";
         //alert($scope.data.names[index].timeStart);
-        // compute for the duration, 
+        // compute for the duration,
         // normalize for the user
         var endToday = new Date();
         $scope.data.names[index].timeEnd = endToday.getTime();
@@ -57,7 +57,7 @@ var eatTimerCtrl= this;
         var s = checkTime(Math.floor(ms));
         // normalize time string
        $scope.data.names[index].timer = h + ":" + m + ":" + s;
-        //alert($scope.data.names[index].timer);
+        alert($scope.data.names[index].timer);
         // timer expired, restart timer
         $scope.data.names[index].tmPromise = $timeout(function () {
             $scope.startTimer(index);
@@ -72,39 +72,39 @@ var eatTimerCtrl= this;
     $scope.stopTimer = function (index) {
        // var dt = new Date();
         //alert(index);
-		
+
         // toggle
        //$scope.data.names[index].mode = "Start";
         $scope.data.names[index].timerRunning = false;
 		 $scope.data.names[index].pauseRunning=false;
-		 $scope.data.names[index].resumeRunning = false; 
+		 $scope.data.names[index].resumeRunning = false;
         // stop timeout service
-		
-        $timeout.cancel($scope.data.names[index].tmPromise); 
-        
+
+        $timeout.cancel($scope.data.names[index].tmPromise);
+
         // add to history
         $scope.timeSchedule.history.push([$scope.data.names[index].projectName,$scope.data.names[index].taskName,
         $scope.data.names[index].timeStart,$scope.data.names[index].timeEnd,
                                           ($scope.data.names[index].timeEnd-$scope.data.names[index].timeStart)/1000]);
-                                          
+
          database.addTask($scope.data.names[index].projectName,$scope.data.names[index].taskName,$scope.data.names[index].timeStart,$scope.data.names[index].timeEnd);
-		                               
-                                          
+
+
     };
-	
-	
+
+
 	 $scope.pauseTimer = function (index) {
 		 $scope.data.names[index].pauseRunning=false;
-		$scope.data.names[index].resumeRunning = true; 
-		$timeout.cancel($scope.data.names[index].tmPromise); 
+		$scope.data.names[index].resumeRunning = true;
+		$timeout.cancel($scope.data.names[index].tmPromise);
 	 };
-	 
+
 	  $scope.resumeTimer = function (index) {
 		 $scope.data.names[index].pauseRunning=true;
 		$scope.data.names[index].resumeRunning = false;
        $scope.data.names[index].tmPromise = $timeout(function () {
             $scope.startTimer(index);
-        });		
+        });
 	 };
 
     /**
@@ -112,26 +112,26 @@ var eatTimerCtrl= this;
      *  toggle between modes
         */
     $scope.toggleTimer = function (index) {
-    $scope.data.names[index].timerRunning = true; 
-	
-     $scope.data.names[index].pauseRunning=true;	
+    $scope.data.names[index].timerRunning = true;
+
+     $scope.data.names[index].pauseRunning=true;
         var startToday = new Date();
-            $scope.data.names[index].timeStart = startToday.getTime();    
+            $scope.data.names[index].timeStart = startToday.getTime();
             $scope.startTimer(index);
-         }; 
+         };
 
     $scope.data ={
        names:[{ taskName:"",projectName:"",timer:"",timerRunning:""}]
    };
-    
+
     $scope.addRow = function(index){
     var name = {taskName:"",projectName:"",timer:"",timerRunning:""};
-       
-		
+
+
 		$scope.data.names.push({taskName:"",projectName:"",timer:"",timerRunning:""
       });
     };
-  
+
   $scope.deleteRow = function($event,name){
   var index = $scope.data.names.indexOf(name);
     if($event.which == 1)
